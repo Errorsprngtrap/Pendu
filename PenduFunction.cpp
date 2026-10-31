@@ -22,6 +22,7 @@ std::string PenduFunction::chooseRandomWord(std::vector<std::string> words_list)
 //show the word found letters
 bool PenduFunction::showWord() {
     std::string wordScan;
+    bool found = false;
 
     if (lettersFound.empty()) {
         for (int i = 0; i < wordToFind.length(); i++) {
@@ -30,11 +31,23 @@ bool PenduFunction::showWord() {
     }
     else {
         std::cout << "size " << lettersFound.size() << "\n";
+
         for (int i = 0; i < wordToFind.length(); i++) {
             for (int l = 0; l < lettersFound.size(); l++) {
                 std::cout << lettersFound[l] << "\n";
+                if (wordToFind[i] == lettersFound[l]) {
+                    wordScan.push_back(lettersFound[l]);
+                    found = true;
+                    break;
+                }
+            }
+            
+            if (!found) {
+                wordScan.push_back('_');
+                found = false;
             }
         }
+
     }
 
     std::cout << wordScan << "\n";
