@@ -12,8 +12,9 @@ std::vector<std::string> words_list = {
     "minecraft"
 };
 
-//
+//main variables
 bool gameFinish = false;
+bool wordFound = false;
 
 //main loop
 int main() {
@@ -26,11 +27,17 @@ int main() {
         char choosenLetter;
         std::cin >> choosenLetter;
         p.addLetters(choosenLetter);
-        p.showWord();
+
+        if (p.showWord()) {
+            wordFound = true;
+            std::cout << "You Won";
+            break;
+        }
     }
 
-    std::cout << "You failed, The word was" << randomWord;
-
+    if (!wordFound) {
+        std::cout << "You failed, The word was: " << randomWord;
+    }
 
     return 0;
 }

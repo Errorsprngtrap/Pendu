@@ -12,9 +12,6 @@ std::string PenduFunction::chooseRandomWord(std::vector<std::string> words_list)
 	srand(time(NULL));
 	int numberRd = rand() % words_list.size();
 
-	std::cout << numberRd << "\n";
-	std::cout << words_list[numberRd] << "\n";
-
 	wordToFind = words_list[numberRd];
 	return words_list[numberRd];
 }
@@ -50,6 +47,10 @@ bool PenduFunction::showWord() {
 	}
 
 	std::cout << wordScan << "\n";
+
+	if (wordScan == wordToFind) {
+		return true;
+	}
 	return false;
 }
 
