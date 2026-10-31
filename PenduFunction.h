@@ -1,12 +1,20 @@
+#pragma once
+
 #include <string>
 #include <vector>
 
-#pragma once
 class PenduFunction
 {
 public:
 	PenduFunction();
-	//choose a word at random
+
 	std::string chooseRandomWord(std::vector<std::string> words_list);
+	bool showWord();
+	void addLetters(char letter);
+
+private:
+	int health = 6;
+	std::string wordToFind;
+	std::vector<char> lettersFound;
 };
 
