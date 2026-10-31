@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "PenduFunction.h"
 
 //List of words
 std::vector<std::string> words_list = {
@@ -27,21 +28,10 @@ void printTest() {
     } 
 }
 
-//choose a word at random
-std::string chooseRandomWord() {
-    srand(time(NULL));
-    int numberRd = rand() % words_list.size();
-
-    std::cout << numberRd << "\n";
-    std::cout << words_list[numberRd] << "\n";
-
-    return words_list[numberRd];
-}
-
 //main loop
 int main() {
-    std::string randomWord = chooseRandomWord();
-
+    PenduFunction p;
+    std::string randomWord = p.chooseRandomWord(words_list);
     //while (lifeCount > 0 && !gameFinish) {
 
     //}
