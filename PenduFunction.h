@@ -11,6 +11,7 @@ public:
 	std::string chooseRandomWord(std::vector<std::string> words_list);
 	bool showWord();
 	void addLetters(char letter);
+	bool isAlive();
 
 private:
 	int health = 6;

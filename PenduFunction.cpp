@@ -24,9 +24,16 @@ bool PenduFunction::showWord() {
     std::string wordScan;
 
     if (lettersFound.empty()) {
-        for (int i = 0; wordToFind.length(); i++) {
-            std::cout << i << "\n";
+        for (int i = 0; i < wordToFind.length(); i++) {
             wordScan.append("_");
+        }
+    }
+    else {
+        std::cout << "size " << lettersFound.size() << "\n";
+        for (int i = 0; i < wordToFind.length(); i++) {
+            for (int l = 0; l < lettersFound.size(); l++) {
+                std::cout << lettersFound[l] << "\n";
+            }
         }
     }
 
@@ -37,4 +44,13 @@ bool PenduFunction::showWord() {
 //add letters
 void PenduFunction::addLetters(char letter) {
     lettersFound.push_back(letter);
+}
+
+//check if dead
+bool PenduFunction::isAlive() {
+    if (health > 0) {
+        return true;
+    }
+
+    return false;
 }

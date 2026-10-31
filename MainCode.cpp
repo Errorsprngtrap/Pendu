@@ -21,5 +21,13 @@ int main() {
     std::string randomWord = p.chooseRandomWord(words_list);
     p.showWord();
     
+    while (!gameFinish and p.isAlive())
+    {
+        char choosenLetter;
+        std::cin >> choosenLetter;
+        p.addLetters(choosenLetter);
+        p.showWord();
+    }
+
     return 0;
 }

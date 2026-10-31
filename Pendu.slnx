@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Pendu.vcxproj" />
+  <Project Path="Pendu.vcxproj" Id="bd46e77b-0408-4b4e-9d13-d2347efa3573" />
 </Solution>
