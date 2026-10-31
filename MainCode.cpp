@@ -29,5 +29,8 @@ int main() {
         p.showWord();
     }
 
+    std::cout << "You failed, The word was" << randomWord;
+
+
     return 0;
 }
